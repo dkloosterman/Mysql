@@ -10,7 +10,8 @@ import java.sql.*;
 
 //import java.lang.*;
 //import java.awt.*;
-//import java.util.*;
+import java.util.*;
+import java.text.*;
 
 
 
@@ -302,6 +303,16 @@ public class Mysql_proj
               
               
            }//end finally try
+           
+           Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+           System.out.println("Local: " + timestamp);
+           
+           SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss zzz");
+           sdf.setTimeZone(TimeZone.getTimeZone("GMT"));
+           java.util.Date date = new java.util.Date();
+           String s=sdf.format(date);
+           System.out.println("GMT: "+s);
+           
            System.out.println("Goodbye mysql!");
     } // end main
 } // end public class Mysql_proj 
