@@ -8,7 +8,7 @@ DROP TABLE IF EXISTS Patient_Info;
 DROP TABLE IF EXISTS Clinical_Test_Instance;
 DROP TABLE IF EXISTS Patient_Ground_Truth;
 
-CREATE TABLE Instrument_Manufactured (
+CREATE TABLE Instrument_Manufactured ( 
        instrument_id VARCHAR (20),
        manufactured_timestamp TIMESTAMP,
        manufactured_location TEXT,
