@@ -135,9 +135,9 @@ CREATE TABLE Clinical_Test_Instance (
 INSERT INTO Clinical_Test_Instance (cartridge_id, instrument_id, patient_id, technician_id, doctor_id, 
                                                          raw_assay_data, analysis_result, clinical_test_timestamp)
        VALUES  	('2017040300001c', '2017040300001', '0000 0000 1000 0001p', '0000 1000 1000 0001t', '1000 1000 1000 0001d', 
-                     'qw34 kh83 lc62 3d9h', '0.1234567890', '2017-04-03 13:01:00'),
+                     'reference to image', '0.1234567890', '2017-04-03 13:01:00'),
         	('2017040300002c', '2017040300002', '0000 0000 1000 0002p', '0000 1000 1000 0002t', '1000 1000 1200 0001d', 
-                     'dfgg lc62 3rij', '0.5379', '2017-04-05 13:23:00');
+                     'reference to image', '0.5379', '2017-04-05 13:23:00');
 
 CREATE TABLE Patient_Ground_Truth (
        ground_truth_counter BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,

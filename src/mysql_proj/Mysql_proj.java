@@ -310,7 +310,7 @@ public class Mysql_proj
            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss zzz");
            sdf.setTimeZone(TimeZone.getTimeZone("GMT"));
            java.util.Date date = new java.util.Date();
-           String s=sdf.format(date);
+           String s = sdf.format(date);
            System.out.println("GMT: "+s);
            
            System.out.println("Goodbye mysql!");
