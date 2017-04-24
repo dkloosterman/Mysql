@@ -101,9 +101,9 @@ CREATE TABLE Cartridge_Manufactured (
 
 INSERT INTO Cartridge_Manufactured (cartridge_id, manufactured_timestamp, manufactured_location, assay_type,
                                          subsystem_1_id, subsystem_2_id, subsystem_3_id)
-       VALUES  	('2017040300001c', '2017-04-04 15:00:00', 'Perinton, NY', '0000 0100 0000 0000',
+       VALUES  	('2017040300001', '2017-04-04 15:00:00', 'Perinton, NY', '0000 0100 0000 0000',
                                           '0000000010000001', '0000000020000001', '0000000030000001'),
-        	('2017040300002c', '2017-03-29 08:59:00', 'Perinton, NY', '0010 0000 0000 0000',
+        	('2017040300002', '2017-03-29 08:59:00', 'Perinton, NY', '0010 0000 0000 0000',
                                           '0000000010000002', '0000000020000002', '0000000030000002');
 
 
