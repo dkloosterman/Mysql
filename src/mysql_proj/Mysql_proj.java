@@ -183,6 +183,7 @@ public class Mysql_proj {
             rs = stmt.executeQuery(sql);
             System.out.println("Clinical Tests");
             while (rs.next()) {
+                long clinical_test_counter = rs.getLong("clinical_test_counter");
                 String cartridge_id = rs.getString("cartridge_id");
                 String instrument_id = rs.getString("instrument_id");
                 String patient_id = rs.getString("patient_id");
@@ -192,14 +193,16 @@ public class Mysql_proj {
                 String analysis_result = rs.getString("analysis_result");
                 java.sql.Timestamp clinical_test_timestamp
                         = rs.getTimestamp("clinical_test_timestamp");
-                System.out.println("\t cartrdige id: " + cartridge_id
+                System.out.println("\t clinical test counter: " + clinical_test_counter
+                        + "\n\t cartrdige id: " + cartridge_id
                         + "\t instrument id: " + instrument_id
                         + "\n\t patient id: " + patient_id
                         + "\t technician id: " + technician_id
                         + "\t doctor id: " + doctor_id
                         + "\n\t raw assay data: " + raw_assay_data
                         + "\t analysis result: " + analysis_result
-                        + "\t at: " + clinical_test_timestamp + "\n");
+                        + "\t at: " + clinical_test_timestamp + "\n"
+                        );
             } // end while (rs.next())
 
             System.out.println("Processing Patient Ground Truth table...");
