@@ -76,7 +76,7 @@ public class Mysql_proj {
                 String contact_telephone = rs.getString("contact_telephone");
                 String contact_email = rs.getString("contact_email");
                 java.sql.Date customer_since = rs.getDate("customer_since");
-                String assay_types_enabled = rs.getString("assay_types_enabled");
+                int assay_types_enabled = rs.getInt("assay_types_enabled");
 
                 System.out.println("\t ID: " + instrumentID
                         + "\t installed: " + time
@@ -149,7 +149,7 @@ public class Mysql_proj {
                 String cartridge_id = rs.getString("cartridge_id");
                 java.sql.Timestamp manufactured_timestamp = rs.getTimestamp("manufactured_timestamp");
                 String manufactured_location = rs.getString("manufactured_location");
-                String assay_type = rs.getString("assay_type");
+                int assay_type = rs.getInt("assay_type");
                 String subsystem_1_id = rs.getString("subsystem_1_id");
                 String subsystem_2_id = rs.getString("subsystem_2_id");
                 String subsystem_3_id = rs.getString("subsystem_3_id");

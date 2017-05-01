@@ -34,16 +34,16 @@ CREATE TABLE Instrument_Deployed (
        contact_telephone VARCHAR (25),
        contact_email VARCHAR (50),
        customer_since DATE DEFAULT '0000-00-00',
-       assay_types_enabled VARCHAR (50),
+       assay_types_enabled INT,
        PRIMARY KEY (instrument_id )
 );
 
 INSERT INTO Instrument_Deployed (instrument_id, installation_timestamp, customer_id, customer_name, customer_location, 
                                     contact_name, contact_telephone, contact_email, customer_since, assay_types_enabled)
        VALUES  	('2017040300001', '2017-04-03 13:01:00', 'cust000101', 'Cowboys', 'Dallas, TX', 
-                               'Jerry Jones', '555-123-4567', 'jerry@cowboys.com', '1989-02-14', '0000 0000 0000 0001'),
+                               'Jerry Jones', '555-123-4567', 'jerry@cowboys.com', '1989-02-14', '0001'),
         	('2017040300002', '2017-04-03 14:02:30', 'cust000102', 'ACME_1', 'New York, NY', 
-                               'Derek Jeter', '555-222-3333', 'jeter@yankees.com', '1995-03-21', '0000 0000 0000 0011');
+                               'Derek Jeter', '555-222-3333', 'jeter@yankees.com', '1995-03-21', '0003');
 
 CREATE TABLE Instrument_Error (
        error_counter BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -93,7 +93,7 @@ CREATE TABLE Cartridge_Manufactured (
        cartridge_id VARCHAR (20),
        manufactured_timestamp TIMESTAMP,
        manufactured_location TEXT,
-       assay_type VARCHAR (50),
+       assay_type INT,
        subsystem_1_id VARCHAR (20),
        subsystem_2_id VARCHAR (20),
        subsystem_3_id VARCHAR (20),
@@ -102,9 +102,9 @@ CREATE TABLE Cartridge_Manufactured (
 
 INSERT INTO Cartridge_Manufactured (cartridge_id, manufactured_timestamp, manufactured_location, assay_type,
                                          subsystem_1_id, subsystem_2_id, subsystem_3_id)
-       VALUES  	('20170501085526993', '2017-04-04 15:00:00', 'Perinton, NY', '0000 0000 0000 0001',
+       VALUES  	('20170501085526993', '2017-04-04 15:00:00', 'Perinton, NY', '0001',
                                           '0000000010000001', '0000000020000001', '0000000030000001'),
-        	('20170501085526994', '2017-03-29 08:59:00', 'Perinton, NY', '0000 0000 0000 0010',
+        	('20170501085526994', '2017-03-29 08:59:00', 'Perinton, NY', '0002',
                                           '0000000010000002', '0000000020000002', '0000000030000002');
 
 
