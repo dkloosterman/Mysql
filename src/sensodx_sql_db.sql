@@ -41,9 +41,9 @@ CREATE TABLE Instrument_Deployed (
 INSERT INTO Instrument_Deployed (instrument_id, installation_timestamp, customer_id, customer_name, customer_location, 
                                     contact_name, contact_telephone, contact_email, customer_since, assay_types_enabled)
        VALUES  	('2017040300001', '2017-04-03 13:01:00', 'cust000101', 'Cowboys', 'Dallas, TX', 
-                               'Jerry Jones', '555-123-4567', 'jerry@cowboys.com', '1989-02-14', '0010 0000'),
+                               'Jerry Jones', '555-123-4567', 'jerry@cowboys.com', '1989-02-14', '0000 0000 0000 0001'),
         	('2017040300002', '2017-04-03 14:02:30', 'cust000102', 'ACME_1', 'New York, NY', 
-                               'Derek Jeter', '555-222-3333', 'jeter@yankees.com', '1995-03-21', '1010 0000');
+                               'Derek Jeter', '555-222-3333', 'jeter@yankees.com', '1995-03-21', '0000 0000 0000 0011');
 
 CREATE TABLE Instrument_Error (
        error_counter BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -102,9 +102,9 @@ CREATE TABLE Cartridge_Manufactured (
 
 INSERT INTO Cartridge_Manufactured (cartridge_id, manufactured_timestamp, manufactured_location, assay_type,
                                          subsystem_1_id, subsystem_2_id, subsystem_3_id)
-       VALUES  	('2017040300001', '2017-04-04 15:00:00', 'Perinton, NY', '0000 0100 0000 0000',
+       VALUES  	('20170501085526993', '2017-04-04 15:00:00', 'Perinton, NY', '0000 0000 0000 0001',
                                           '0000000010000001', '0000000020000001', '0000000030000001'),
-        	('2017040300002', '2017-03-29 08:59:00', 'Perinton, NY', '0010 0000 0000 0000',
+        	('20170501085526994', '2017-03-29 08:59:00', 'Perinton, NY', '0000 0000 0000 0010',
                                           '0000000010000002', '0000000020000002', '0000000030000002');
 
 
@@ -118,8 +118,8 @@ CREATE TABLE Patient_Info (
 );
 
 INSERT INTO Patient_Info (patient_id, patient_dob, patient_gender, patient_race, patient_location )
-       VALUES  	('0000 0000 2000 0001p', '1960-11-12', 'M', 'White', 'Rochester, NY'),
-        	('0000 0000 2000 0002p', '1955-12-22', 'F', 'Hispanic', 'Bimghamton, NY');
+       VALUES  	('0000 0000 2000 0001', '1960-11-12', 'M', 'White', 'Rochester, NY'),
+        	('0000 0000 2000 0002', '1955-12-22', 'F', 'Hispanic', 'Bimghamton, NY');
 
 CREATE TABLE Clinical_Test_Instance (
        clinical_test_counter BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -136,9 +136,9 @@ CREATE TABLE Clinical_Test_Instance (
 
 INSERT INTO Clinical_Test_Instance (cartridge_id, instrument_id, patient_id, technician_id, doctor_id, 
                                                          raw_assay_data, analysis_result, clinical_test_timestamp)
-       VALUES  	('2017040300001c', '2017040300001', '0000 0000 1000 0001p', '0000 1000 1000 0001t', '1000 1000 1000 0001d', 
+       VALUES  	('20170501085526993', '2017040300001', '0000 0000 1000 0001', '0000 1000 1000 0001t', '1000 1000 1000 0001d', 
                      'reference to image', '0.1234567890', '2017-04-03 13:01:00'),
-        	('2017040300002c', '2017040300002', '0000 0000 1000 0002p', '0000 1000 1000 0002t', '1000 1000 1200 0001d', 
+        	('20170501085526994', '2017040300002', '0000 0000 1000 0002', '0000 1000 1000 0002t', '1000 1000 1200 0001d', 
                      'reference to image', '0.5379', '2017-04-05 13:23:00');
 
 CREATE TABLE Patient_Ground_Truth (

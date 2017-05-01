@@ -85,7 +85,7 @@ public class Mysql_proj {
                         + "\t customer location: " + customer_location
                         + "\n\t contact name: " + contact_name
                         + "\t contact phone: " + contact_telephone
-                        + "\t cpntact email: " + contact_email
+                        + "\t contact email: " + contact_email
                         + "\t customer since: " + customer_since
                         + "\n\t assays enabled: " + assay_types_enabled + "\n");
             } // end while (rs.next())
