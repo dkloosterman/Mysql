@@ -41,9 +41,9 @@ CREATE TABLE Instrument_Deployed (
 INSERT INTO Instrument_Deployed (instrument_id, installation_timestamp, customer_id, customer_name, customer_location, 
                                     contact_name, contact_telephone, contact_email, customer_since, assay_types_enabled)
        VALUES  	('2017040300001', '2017-04-03 13:01:00', 'cust000101', 'Cowboys', 'Dallas, TX', 
-                               'Jerry Jones', '555-123-4567', 'jerry@cowboys.com', '1989-02-14', '0001'),
+                               'Jerry Jones', '555-123-4567', 'jerry@cowboys.com', '1989-02-14', '1'),
         	('2017040300002', '2017-04-03 14:02:30', 'cust000102', 'ACME_1', 'New York, NY', 
-                               'Derek Jeter', '555-222-3333', 'jeter@yankees.com', '1995-03-21', '0003');
+                               'Derek Jeter', '555-222-3333', 'jeter@yankees.com', '1995-03-21', '3');
 
 CREATE TABLE Instrument_Error (
        error_counter BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -102,9 +102,9 @@ CREATE TABLE Cartridge_Manufactured (
 
 INSERT INTO Cartridge_Manufactured (cartridge_id, manufactured_timestamp, manufactured_location, assay_type,
                                          subsystem_1_id, subsystem_2_id, subsystem_3_id)
-       VALUES  	('20170501085526993', '2017-04-04 15:00:00', 'Perinton, NY', '0001',
+       VALUES  	('20170501085526993', '2017-04-04 15:00:00', 'Perinton, NY', '1',
                                           '0000000010000001', '0000000020000001', '0000000030000001'),
-        	('20170501085526994', '2017-03-29 08:59:00', 'Perinton, NY', '0002',
+        	('20170501085526994', '2017-03-29 08:59:00', 'Perinton, NY', '2',
                                           '0000000010000002', '0000000020000002', '0000000030000002');
 
 
