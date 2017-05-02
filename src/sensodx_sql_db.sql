@@ -7,6 +7,7 @@ DROP TABLE IF EXISTS Cartridge_Manufactured;
 DROP TABLE IF EXISTS Patient_Info;
 DROP TABLE IF EXISTS Clinical_Test_Instance;
 DROP TABLE IF EXISTS Patient_Ground_Truth;
+DROP TABLE IF EXISTS Clinical_Test_Images;
 
 CREATE TABLE Instrument_Manufactured ( 
        instrument_id VARCHAR (20),
@@ -43,7 +44,7 @@ INSERT INTO Instrument_Deployed (instrument_id, installation_timestamp, customer
        VALUES  	('2017040300001', '2017-04-03 13:01:00', 'cust000101', 'Cowboys', 'Dallas, TX', 
                                'Jerry Jones', '555-123-4567', 'jerry@cowboys.com', '1989-02-14', '1'),
         	('2017040300002', '2017-04-03 14:02:30', 'cust000102', 'ACME_1', 'New York, NY', 
-                               'Derek Jeter', '555-222-3333', 'jeter@yankees.com', '1995-03-21', '3');
+                               'Derek Jeter', '555-222-3333', 'jeter@yankees.com', '1995-03-21', '2');
 
 CREATE TABLE Instrument_Error (
        error_counter BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -154,3 +155,9 @@ INSERT INTO Patient_Ground_Truth (patient_id, clinical_description, clinical_sta
        VALUES  	('0000 0000 2000 0001p', 'deceased', '1234 2345 3456 4567', '2017-04-05 13:23:00'),
         	('0000 0000 2000 0002p', 'complete remission', '1000 2345 3456 0003', '2017-04-07 09:55:00');
 
+
+CREATE TABLE Clinical_Test_Images (
+       image_counter BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+       image           blob,
+       PRIMARY KEY (image_counter )
+);
