@@ -157,7 +157,7 @@ INSERT INTO Patient_Ground_Truth (patient_id, clinical_description, clinical_sta
 
 
 CREATE TABLE Clinical_Test_Images (
-       image_counter BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+       image_id        BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
        image           blob,
-       PRIMARY KEY (image_counter )
+       PRIMARY KEY (image_id )
 );
