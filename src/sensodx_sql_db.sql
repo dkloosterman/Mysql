@@ -123,7 +123,7 @@ INSERT INTO Patient_Info (patient_id, patient_dob, patient_gender, patient_race,
         	('0000 0000 2000 0002', '1955-12-22', 'F', 'Hispanic', 'Bimghamton, NY');
 
 CREATE TABLE Clinical_Test_Instance (
-       clinical_test_counter BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+       clinical_test_instance_counter BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
        cartridge_id VARCHAR (20),
        instrument_id VARCHAR (20),
        patient_id VARCHAR (20),
@@ -132,7 +132,7 @@ CREATE TABLE Clinical_Test_Instance (
        raw_assay_data VARCHAR (100),
        analysis_result VARCHAR (100),
        clinical_test_timestamp TIMESTAMP,
-       PRIMARY KEY (clinical_test_counter )
+       PRIMARY KEY (clinical_test_instance_counter )
 );
 
 INSERT INTO Clinical_Test_Instance (cartridge_id, instrument_id, patient_id, technician_id, doctor_id, 
