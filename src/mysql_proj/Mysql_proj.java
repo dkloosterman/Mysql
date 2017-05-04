@@ -183,7 +183,7 @@ public class Mysql_proj {
             rs = stmt.executeQuery(sql);
             System.out.println("Clinical Tests");
             while (rs.next()) {
-                long clinical_test_counter = rs.getLong("clinical_test_counter");
+                long clinical_test_instance_counter = rs.getLong("clinical_test_instance_counter");
                 String cartridge_id = rs.getString("cartridge_id");
                 String instrument_id = rs.getString("instrument_id");
                 String patient_id = rs.getString("patient_id");
@@ -193,7 +193,7 @@ public class Mysql_proj {
                 String analysis_result = rs.getString("analysis_result");
                 java.sql.Timestamp clinical_test_timestamp
                         = rs.getTimestamp("clinical_test_timestamp");
-                System.out.println("\t clinical test counter: " + clinical_test_counter
+                System.out.println("\t clinical test instance counter: " + clinical_test_instance_counter
                         + "\n\t cartrdige id: " + cartridge_id
                         + "\t instrument id: " + instrument_id
                         + "\n\t patient id: " + patient_id
@@ -222,6 +222,20 @@ public class Mysql_proj {
                         + "\n\t Clinical Code: " + clinical_state
                         + "\t Timestamp: " + ground_truth_timestamp + "\n");
             } // end while (rs.next())
+            
+            ////////////////////////////////////////////
+            System.out.println("Processing Clinical Test Images table...");
+            sql = "SELECT * FROM Clinical_Test_Images";
+            rs = stmt.executeQuery(sql);
+            System.out.println("Clinical Test Images");
+            while (rs.next()) {
+                long clinical_test_image_counter = rs.getInt("clinical_test_image_counter");
+                String image_timestamp = rs.getString("image_timestamp");
+
+                System.out.println("\t Clinical Test Image Counter: " + clinical_test_image_counter
+                        + "\t Timestamp: " + image_timestamp + "\n");
+            } // end while (rs.next())
+            ///////////////////////////////////////////
 
             System.out.println("Join tables");
             sql = "SELECT Instrument_Manufactured.manufactured_timestamp, "
