@@ -202,7 +202,7 @@ public class Mysql_proj {
                         + "\n\t raw assay data: " + raw_assay_data
                         + "\t analysis result: " + analysis_result
                         + "\t at: " + clinical_test_timestamp + "\n"
-                        );
+                );
             } // end while (rs.next())
 
             System.out.println("Processing Patient Ground Truth table...");
@@ -222,7 +222,7 @@ public class Mysql_proj {
                         + "\n\t Clinical Code: " + clinical_state
                         + "\t Timestamp: " + ground_truth_timestamp + "\n");
             } // end while (rs.next())
-            
+
             ////////////////////////////////////////////
             System.out.println("Processing Clinical Test Images table...");
             sql = "SELECT * FROM Clinical_Test_Images";
@@ -230,10 +230,14 @@ public class Mysql_proj {
             System.out.println("Clinical Test Images");
             while (rs.next()) {
                 long clinical_test_image_counter = rs.getInt("clinical_test_image_counter");
+                Blob blob = rs.getBlob("image");
+                byte b[];
+                b = blob.getBytes(1, (int) blob.length());
                 String image_timestamp = rs.getString("image_timestamp");
 
                 System.out.println("\t Clinical Test Image Counter: " + clinical_test_image_counter
-                        + "\t Timestamp: " + image_timestamp + "\n");
+                        + "\n\t image blob: " + blob
+                        + "\n\t Timestamp: " + image_timestamp + "\n");
             } // end while (rs.next())
             ///////////////////////////////////////////
 
