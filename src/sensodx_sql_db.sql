@@ -28,6 +28,7 @@ INSERT INTO Instrument_Manufactured (instrument_id, manufactured_timestamp, manu
 CREATE TABLE Instrument_Deployed (
        instrument_id VARCHAR (20),
        installation_timestamp TIMESTAMP,
+       deployment_type VARCHAR (20),
        customer_id VARCHAR (20),
        customer_name VARCHAR (50),
        customer_location TEXT,
@@ -39,12 +40,18 @@ CREATE TABLE Instrument_Deployed (
        PRIMARY KEY (instrument_id )
 );
 
-INSERT INTO Instrument_Deployed (instrument_id, installation_timestamp, customer_id, customer_name, customer_location, 
-                                    contact_name, contact_telephone, contact_email, customer_since, assay_types_enabled)
-       VALUES  	('2017040300001', '2017-04-03 13:01:00', 'cust000101', 'Cowboys', 'Dallas, TX', 
-                               'Jerry Jones', '555-123-4567', 'jerry@cowboys.com', '1989-02-14', '1'),
-        	('2017040300002', '2017-04-03 14:02:30', 'cust000102', 'ACME_1', 'New York, NY', 
-                               'Derek Jeter', '555-222-3333', 'jeter@yankees.com', '1995-03-21', '2');
+INSERT INTO Instrument_Deployed (instrument_id, installation_timestamp, deployment_type, 
+                                 customer_id, customer_name, customer_location,                                     
+                                 contact_name, contact_telephone, contact_email, 
+                                 customer_since, assay_types_enabled)
+       VALUES  	('2017040300001', '2017-04-03 13:01:00', 'LDT', 
+                                  'cust000101', 'Cowboys', 'Dallas, TX', 
+                                  'Jerry Jones', '555-123-4567', 'jerry@cowboys.com', 
+                                  '1989-02-14', '1'),
+        	('2017040300002', '2017-04-03 14:02:30', 'R&D Tool', 
+                                  'cust000102', 'ACME_1', 'New York, NY', 
+                                  'Derek Jeter', '555-222-3333', 'jeter@yankees.com', 
+                                  '1995-03-21', '2');
 
 CREATE TABLE Instrument_Error (
        error_counter BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,

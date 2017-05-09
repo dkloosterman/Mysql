@@ -65,10 +65,11 @@ public class Mysql_proj {
             System.out.println("Processing Instrument Deployed table...");
             sql = "SELECT * FROM Instrument_Deployed";
             rs = stmt.executeQuery(sql);
-            System.out.println("Instruments Deployd");
+            System.out.println("Instruments Deployed");
             while (rs.next()) {
                 String instrumentID = rs.getString("instrument_id");
                 java.sql.Timestamp time = rs.getTimestamp("installation_timestamp");
+                String deployment_type = rs.getString("deployment_type");
                 String customer_id = rs.getString("customer_id");
                 String customer_name = rs.getString("customer_name");
                 String customer_location = rs.getString("customer_location");
@@ -80,6 +81,7 @@ public class Mysql_proj {
 
                 System.out.println("\t ID: " + instrumentID
                         + "\t installed: " + time
+                        + "\t deployment type: " + deployment_type
                         + "\n\t customer id: " + customer_id
                         + "\t customer name: " + customer_name
                         + "\t customer location: " + customer_location
