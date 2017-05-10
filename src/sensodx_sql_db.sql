@@ -28,7 +28,7 @@ INSERT INTO Instrument_Manufactured (instrument_id, manufactured_timestamp, manu
 CREATE TABLE Instrument_Deployed (
        instrument_id VARCHAR (20),
        installation_timestamp TIMESTAMP,
-       deployment_type VARCHAR (20),
+       deployment_type VARCHAR (25),
        customer_id VARCHAR (20),
        customer_name VARCHAR (50),
        customer_location TEXT,
@@ -48,7 +48,7 @@ INSERT INTO Instrument_Deployed (instrument_id, installation_timestamp, deployme
                                   'cust000101', 'Cowboys', 'Dallas, TX', 
                                   'Jerry Jones', '555-123-4567', 'jerry@cowboys.com', 
                                   '1989-02-14', '1'),
-        	('2017040300002', '2017-04-03 14:02:30', 'Development Tool', 
+        	('2017040300002', '2017-04-03 14:02:30', 'ResearchAndDevelopment', 
                                   'cust000102', 'ACME_1', 'New York, NY', 
                                   'Derek Jeter', '555-222-3333', 'jeter@yankees.com', 
                                   '1995-03-21', '2');
