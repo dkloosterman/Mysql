@@ -150,12 +150,15 @@ public class Mysql_proj {
             while (rs.next()) {
                 String cartridge_id = rs.getString("cartridge_id");
                 java.sql.Timestamp manufactured_timestamp = rs.getTimestamp("manufactured_timestamp");
+                String deployment_type = rs.getString("deployment_type");
                 String manufactured_location = rs.getString("manufactured_location");
                 int assay_type = rs.getInt("assay_type");
                 String subsystem_1_id = rs.getString("subsystem_1_id");
                 String subsystem_2_id = rs.getString("subsystem_2_id");
                 String subsystem_3_id = rs.getString("subsystem_3_id");
                 System.out.println("\t Cartridge ID: " + cartridge_id
+                        + "\t Deploymeny Type: " + deployment_type
+                        + "\t Manufactured Location: " + manufactured_location
                         + "\t Cartridge Assay Type: " + assay_type
                         + "\n\t Sub 1 ID: " + subsystem_1_id
                         + "\t Sub 2 ID:" + subsystem_2_id
