@@ -98,13 +98,16 @@ public class Mysql_proj {
             System.out.println("Instrument Errors");
             while (rs.next()) {
                 long error_counter = rs.getLong("error_counter");
+                String description = rs.getString("description");
                 String instrumentID = rs.getString("instrument_id");
                 String errorCode = rs.getString("instrument_error_code");
                 java.sql.Timestamp time = rs.getTimestamp("instrument_error_timestamp");
                 System.out.println("\t index: " + error_counter
-                        + "\t ID: " + instrumentID
+                        + "\t descriptuion: " + description
+                        + "\n\t Instrument ID: " + instrumentID
                         + "\t error Code: " + errorCode
-                        + "\t at: " + time);
+                        + "\t at: " + time
+                        + "\n");
             } // end while (rs.next())
 
             System.out.println("Processing Service Engineer table...");

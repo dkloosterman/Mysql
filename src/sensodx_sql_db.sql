@@ -55,17 +55,18 @@ INSERT INTO Instrument_Deployed (instrument_id, installation_timestamp, deployme
 
 CREATE TABLE Instrument_Error (
        error_counter BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+       description TEXT,
        instrument_id VARCHAR (20),
        instrument_error_code VARCHAR (20),
        instrument_error_timestamp TIMESTAMP,
        PRIMARY KEY (error_counter )
 );
 
-INSERT INTO Instrument_Error (instrument_id, instrument_error_code, instrument_error_timestamp)
-       VALUES  	('2017040300001', '11111', '2017-04-04 13:00:00'),
-        	('2017040300002', '22222', '2017-04-04 14:00:00'),
-                ('2017040300001', '3333', '2017-04-04 15:00:00'),
-                ('2017040300002', '4444', '2017-04-04 16:00:00');
+INSERT INTO Instrument_Error (description, instrument_id, instrument_error_code, instrument_error_timestamp)
+       VALUES  	('Instrument Optics selftest failure', '2017040300001', '11111', '2017-04-04 13:00:00'),
+        	('Instrument not configured for this Cartridge type', '2017040300002', '22222', '2017-04-04 14:00:00'),
+                ('Unable to connect to database', '2017040300001', '3333', '2017-04-04 15:00:00'),
+                ('Unable to find raw assay image', '2017040300002', '4444', '2017-04-04 16:00:00');
 
 CREATE TABLE Service_Engineer (
        service_engineer_id VARCHAR (20),
