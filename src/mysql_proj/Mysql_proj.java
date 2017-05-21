@@ -100,12 +100,16 @@ public class Mysql_proj {
                 long error_counter = rs.getLong("error_counter");
                 String description = rs.getString("description");
                 String instrumentID = rs.getString("instrument_id");
+                String cartridge_id = rs.getString("cartridge_id");
+                String test_instance_id = rs.getString("test_instance_id");
                 String errorCode = rs.getString("instrument_error_code");
                 java.sql.Timestamp time = rs.getTimestamp("instrument_error_timestamp");
                 System.out.println("\t index: " + error_counter
                         + "\t descriptuion: " + description
                         + "\n\t Instrument ID: " + instrumentID
-                        + "\t error Code: " + errorCode
+                        + "\t Cartridge ID: " + cartridge_id
+                        + "\t Test Instance ID: " + test_instance_id
+                        + "\n\t error Code: " + errorCode
                         + "\t at: " + time
                         + "\n");
             } // end while (rs.next())
