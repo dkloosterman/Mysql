@@ -103,7 +103,7 @@ public class Mysql_proj {
                 String cartridge_id = rs.getString("cartridge_id");
                 String test_instance_id = rs.getString("test_instance_id");
                 String errorCode = rs.getString("error_code");
-                java.sql.Timestamp time = rs.getTimestamp("error_timestamp");
+                String time = rs.getString("error_timestamp");
                 System.out.println("\t index: " + error_counter
                         + "\t descriptuion: " + description
                         + "\n\t Instrument ID: " + instrumentID

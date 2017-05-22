@@ -60,7 +60,7 @@ CREATE TABLE Errors (
        cartridge_id VARCHAR (20),
        test_instance_id VARCHAR (20),
        error_code VARCHAR (20),
-       error_timestamp TIMESTAMP,
+       error_timestamp VARCHAR (25),
        PRIMARY KEY (error_counter )
 );
 
