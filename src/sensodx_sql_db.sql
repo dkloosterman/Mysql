@@ -11,7 +11,7 @@ DROP TABLE IF EXISTS Clinical_Test_Images;
 
 CREATE TABLE Instrument_Manufactured ( 
        instrument_id VARCHAR (20),
-       manufactured_timestamp TIMESTAMP,
+       manufactured_timestamp VARCHAR (25),
        manufactured_location TEXT,
        subsystem_1_id VARCHAR (20),
        subsystem_2_id VARCHAR (20),
@@ -27,7 +27,7 @@ INSERT INTO Instrument_Manufactured (instrument_id, manufactured_timestamp, manu
 
 CREATE TABLE Instrument_Deployed (
        instrument_id VARCHAR (20),
-       installation_timestamp TIMESTAMP,
+       installation_timestamp VARCHAR (25),
        deployment_type VARCHAR (25),
        customer_id VARCHAR (20),
        customer_name VARCHAR (50),
@@ -90,7 +90,7 @@ CREATE TABLE Service_Job (
        service_categories VARCHAR (50),
        comment TEXT,
        service_engineer_id VARCHAR (20),
-       service_complete_timestamp TIMESTAMP,
+       service_complete_timestamp VARCHAR (25),
        PRIMARY KEY (service_job_counter )
 );
 
@@ -102,7 +102,7 @@ INSERT INTO Service_Job (instrument_id, service_categories, comment, service_eng
 
 CREATE TABLE Cartridge_Manufactured (
        cartridge_id VARCHAR (20),
-       manufactured_timestamp TIMESTAMP,
+       manufactured_timestamp VARCHAR (25),
        deployment_type VARCHAR (25),
        manufactured_location TEXT,
        assay_type INT,
@@ -142,7 +142,7 @@ CREATE TABLE Clinical_Test_Instance (
        doctor_id VARCHAR (20),
        raw_assay_data VARCHAR (100),
        analysis_result VARCHAR (100),
-       clinical_test_timestamp TIMESTAMP,
+       clinical_test_timestamp VARCHAR (25),
        PRIMARY KEY (clinical_test_instance_counter )
 );
 
@@ -158,7 +158,7 @@ CREATE TABLE Patient_Ground_Truth (
        patient_id VARCHAR (20),
        clinical_description TEXT,
        clinical_state VARCHAR (25),
-       ground_truth_timestamp TIMESTAMP,
+       ground_truth_timestamp VARCHAR (25),
        PRIMARY KEY (ground_truth_counter )
 );
 
