@@ -1,6 +1,6 @@
 DROP TABLE IF EXISTS Instrument_Manufactured;
 DROP TABLE IF EXISTS Instrument_Deployed;
-DROP TABLE IF EXISTS Instrument_Error;
+DROP TABLE IF EXISTS Errors;
 DROP TABLE IF EXISTS Service_Engineer;
 DROP TABLE IF EXISTS Service_Job;
 DROP TABLE IF EXISTS Cartridge_Manufactured;
@@ -53,18 +53,18 @@ INSERT INTO Instrument_Deployed (instrument_id, installation_timestamp, deployme
                                   'Derek Jeter', '555-222-3333', 'jeter@yankees.com', 
                                   '1995-03-21', '2');
 
-CREATE TABLE Instrument_Error (
+CREATE TABLE Errors (
        error_counter BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
        description TEXT,
        instrument_id VARCHAR (20),
        cartridge_id VARCHAR (20),
        test_instance_id VARCHAR (20),
-       instrument_error_code VARCHAR (20),
-       instrument_error_timestamp TIMESTAMP,
+       error_code VARCHAR (20),
+       error_timestamp TIMESTAMP,
        PRIMARY KEY (error_counter )
 );
 
-INSERT INTO Instrument_Error (description, instrument_id, cartridge_id, test_instance_id, instrument_error_code, instrument_error_timestamp)
+INSERT INTO Errors (description, instrument_id, cartridge_id, test_instance_id, error_code, error_timestamp)
        VALUES  	('Instrument Optics selftest failure', '2017040300001', '20170501085526993', '20170501085526993', '11111', '2017-04-04 13:00:00'),
         	('Instrument not configured for this Cartridge type', '2017040300002','20170501085526993', '20170501085526993',  '22222', '2017-04-04 14:00:00'),
                 ('Unable to connect to database', '2017040300001', '20170501085526993', '20170501085526993', '3333', '2017-04-04 15:00:00'),

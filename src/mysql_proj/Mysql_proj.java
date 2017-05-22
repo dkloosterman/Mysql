@@ -92,18 +92,18 @@ public class Mysql_proj {
                         + "\n\t assays enabled: " + assay_types_enabled + "\n");
             } // end while (rs.next())
 
-            System.out.println("Processing Instrument Error table...");
-            sql = "SELECT * FROM Instrument_Error";
+            System.out.println("Processing Error table...");
+            sql = "SELECT * FROM Errors";
             rs = stmt.executeQuery(sql);
-            System.out.println("Instrument Errors");
+            System.out.println("Errors");
             while (rs.next()) {
                 long error_counter = rs.getLong("error_counter");
                 String description = rs.getString("description");
                 String instrumentID = rs.getString("instrument_id");
                 String cartridge_id = rs.getString("cartridge_id");
                 String test_instance_id = rs.getString("test_instance_id");
-                String errorCode = rs.getString("instrument_error_code");
-                java.sql.Timestamp time = rs.getTimestamp("instrument_error_timestamp");
+                String errorCode = rs.getString("error_code");
+                java.sql.Timestamp time = rs.getTimestamp("error_timestamp");
                 System.out.println("\t index: " + error_counter
                         + "\t descriptuion: " + description
                         + "\n\t Instrument ID: " + instrumentID
@@ -255,17 +255,17 @@ public class Mysql_proj {
 
             System.out.println("Join tables");
             sql = "SELECT Instrument_Manufactured.manufactured_timestamp, "
-                    + "Instrument_Error.instrument_error_code "
-                    + "FROM  Instrument_Manufactured JOIN Instrument_Error "
+                    + "Errors.error_code "
+                    + "FROM  Instrument_Manufactured JOIN Errors "
                     + "ON Instrument_Manufactured.instrument_id = "
-                    + "Instrument_Error.instrument_id ";
+                    + "Errors.instrument_id ";
             rs = stmt.executeQuery(sql);
             System.out.println("Join to get Mfg timestamp, Inst Error Code");
             while (rs.next()) {
-                String errorCode = rs.getString("Instrument_Error.instrument_error_code");
+                String errorCode = rs.getString("Errors.error_code");
                 java.sql.Timestamp time
                         = rs.getTimestamp("Instrument_Manufactured.manufactured_timestamp");
-                System.out.println("\t Instr. error Code: " + errorCode
+                System.out.println("\t error Code: " + errorCode
                         + "\t Instr. mfged at: " + time);
             } // end while (rs.next())
 
