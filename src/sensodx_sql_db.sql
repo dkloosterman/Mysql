@@ -21,7 +21,7 @@ CREATE TABLE Instrument_Manufactured (
 
 INSERT INTO Instrument_Manufactured (instrument_id, manufactured_timestamp, manufactured_location, 
                                                          subsystem_1_id, subsystem_2_id, subsystem_3_id)
-       VALUES  	('2017040300001', '2017-09-20 13:01:00', 'Rochester, NY', 'sub1_001', 'sub2_001', 'sub3_001'),
+       VALUES  	('2017040300001', '2017-04-03 13:01:00', 'Rochester, NY', 'sub1_001', 'sub2_001', 'sub3_001'),
         	('2017040300002', '2017-04-03 13:02:00', 'Rochester, NY', 'sub1_002', 'sub2_002', 'sub3_002'),
                 ('2017040300003', '2017-04-03 13:02:00', 'Rochester, NY', 'sub1_002', 'sub2_002', 'sub3_002');
 
