@@ -116,6 +116,8 @@ INSERT INTO Cartridge_Manufactured (cartridge_id, manufactured_timestamp, deploy
                                          subsystem_1_id, subsystem_2_id, subsystem_3_id)
        VALUES  	('20170501085526993', '2017-04-04 15:00:00', 'Virtual', 'Perinton, NY', '1',
                                           '0000000010000001', '0000000020000001', '0000000030000001'),
+                ('TestCart', '2017-04-04 15:00:00', 'Virtual', 'Perinton, NY', '1',
+                                          '0000000010000001', '0000000020000001', '0000000030000001'),
         	('20170501085526994', '2017-03-29 08:59:00', 'Virtual', 'Perinton, NY', '2',
                                           '0000000010000002', '0000000020000002', '0000000030000002');
 
