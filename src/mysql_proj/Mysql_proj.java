@@ -78,6 +78,7 @@ public class Mysql_proj {
                 String contact_email = rs.getString("contact_email");
                 java.sql.Date customer_since = rs.getDate("customer_since");
                 int assay_types_enabled = rs.getInt("assay_types_enabled");
+                boolean cartridgeTrustMeAllowed = rs.getBoolean("cartridge_trustme_allowed");
 
                 System.out.println("\t ID: " + instrumentID
                         + "\t installed: " + time
@@ -89,7 +90,8 @@ public class Mysql_proj {
                         + "\t contact phone: " + contact_telephone
                         + "\t contact email: " + contact_email
                         + "\t customer since: " + customer_since
-                        + "\n\t assays enabled: " + assay_types_enabled + "\n");
+                        + "\n\t assays enabled: " + assay_types_enabled
+                        + "\t cartridge trust me allowed: " + cartridgeTrustMeAllowed + "\n");
             } // end while (rs.next())
 
             System.out.println("Processing Error table...");
