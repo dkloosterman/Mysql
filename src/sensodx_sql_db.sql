@@ -144,7 +144,7 @@ CREATE TABLE Clinical_Test_Instance (
        technician_id VARCHAR (20),
        doctor_id VARCHAR (20),
        raw_assay_data VARCHAR (100),
-       analysis_result VARCHAR (100),
+       analysis_result VARCHAR (100) DEFAULT -1,
        clinical_test_timestamp VARCHAR (25),
        PRIMARY KEY (clinical_test_instance_counter )
 );
